@@ -8,7 +8,7 @@ function radb() {
   var b = Math.floor(Math.random() * 6) + 1;
   return b;
 }
-
+let resetbtn = document.querySelector("#reset");
 var emoji = document.querySelector("#emoji");
 var emoji2 = document.querySelector("#emoji2");
 
@@ -18,7 +18,6 @@ function count() {
   clickCount++;
   console.log(clickCount);
 }
-
 
 //   This function below is used to change the dice roll by changing image attribute. It works with the while loop functin.
 
@@ -89,24 +88,33 @@ function random() {
   console.log(extractP2);
 
   //emoji reactions
-    if (extractP1 < extractP2) {
-      emoji.innerText = "😰";
-      emoji2.innerText = "😂";
-    } else if (extractP1 > extractP2) {
-      emoji.innerText = "😂";
-      emoji2.innerText = "😰";
-    } else {
-      emoji.innerText = "😐";
-      emoji2.innerText = "😐";
-    }
-  
+  if (extractP1 < extractP2) {
+    emoji.innerText = "😰";
+    emoji2.innerText = "😂";
+  } else if (extractP1 > extractP2) {
+    emoji.innerText = "😂";
+    emoji2.innerText = "😰";
+  } else {
+    emoji.innerText = "😐";
+    emoji2.innerText = "😐";
+  }
 
+ 
 }
 
-// var results = [];
-// var randomValue = n;  //Generate a random value
-// results.push(randomValue); // Add the random value to the array
-// console.log(results);
+
+// let container = document.querySelector(".container");
+// function height(){
+//    container.style.minHeight = '320px';
+// }
+
+// function heightDown() {
+//   container.style.minHeight = "270px";
+// }
+
+// function btnStyle() {
+//   resetbtn.style.marginTop = "-50px";
+// }
 
 // Getting the button and adding event listeners using Dom.
 var button = document.querySelector("button");
@@ -114,6 +122,8 @@ console.log(button);
 button.addEventListener("click", random);
 button.addEventListener("click", change);
 button.addEventListener("click", count);
+// button.addEventListener("click", btnStyle);
+// button.addEventListener("click", height);
 console.log(button);
 
 // player color when playing
@@ -157,3 +167,30 @@ function change() {
     }
   }
 }
+
+
+//Reset game
+function reset() {
+  clickCount = 1;
+
+  // Reset player1 score
+  var player1Score = document.querySelector("#player1Score");
+  player1Score.innerText = "Player1 Score: 0";
+
+  // Reset player2 score
+  var player2Score = document.querySelector("#player2Score");
+  player2Score.innerText = "Player2 Score: 0";
+
+  // Reset emoji reactions
+  emoji.innerText = "";
+  emoji2.innerText = "";
+
+  // Reset player colors
+  player1();
+  defaultPlayer2();
+}
+
+
+
+resetbtn.addEventListener("click", reset);
+// resetbtn.addEventListener("click", heightDown);

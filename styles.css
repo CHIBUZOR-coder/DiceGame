@@ -10,46 +10,29 @@ body {
 
 .container {
   position: relative;
+  display: flow-root;
   width: 70%;
+  min-height: 270px;
   margin: auto;
   text-align: center;
-  height: 100%;
-}
-
-h4 {
-  left: auto;
+  background-color: #222525;
+  margin-top: 70px;
 }
 
 .diceContainer {
   position: relative;
   display: flex;
-  height: 100%;
   flex-direction: row;
   justify-content: center;
+  min-height: 70px;
   align-items: center;
+  background-color: bisque;
 }
 
-
-
-
-/* 
-.score-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-} */
-
-h1 {
+h3 {
   margin: 30px;
   font-family: "Lobster", cursive;
   text-shadow: 5px 0 #232931;
-  color: #4ecca3;
-}
-
-h2 {
-  font-family: "Lobster", cursive;
-  text-shadow: 5px 0 #222525;
   color: #4ecca3;
 }
 
@@ -57,27 +40,253 @@ p {
   font-size: 2rem;
   color: #4ecca3;
   font-family: "Indie Flower", cursive;
+  margin-top: 45px;
 }
 
 img {
-  width: 60%;
-}
-
-.ter {
-  margin-top: 5%;
-  color: #eeeeee;
-  text-align: center;
-  font-family: "Indie Flower", cursive;
-  position: absolute;
+  width: 30%;
+  height: 20px;
+  margin-top: 5px;
 }
 
 .roll {
-  position: relative;
-  width: 50%;
+  height: 100px;
+  width: 60px;
+  margin: 0 0 0 0;
+  background-color: #222525;
 }
 
 button {
   border-radius: 50%;
-  height: 100%;
   background-color: rgb(156, 11, 11);
+  color: aqua;
+}
+
+#reset {
+  background-color: rgb(156, 11, 11);
+  border-radius: 10%;
+  height: 30px;
+  margin: 15px 0 0 0;
+}
+
+#dice {
+ margin-top: 10px;
+  width: 80%;
+  height: 50%;
+}
+
+.con {
+  height: 60%;
+  margin: -50px auto 0 auto;
+}
+
+.emojies {
+  margin: -20px 0 0 0;
+}
+#top {
+  margin: 20px 0 0 0;
+}
+
+.test {
+  position: relative;
+  width: 100%;
+  /* height: 70px; */
+  background-color: #232931;
+}
+
+.playe{
+  margin-top: -15px;
+}
+
+.imgDiv{
+margin-top: -90px;
+
+}
+
+
+
+
+
+@media   (min-width: 0px) and (max-width: 148.9px) {
+  .media {
+    /* background-color: #232931; */
+    width: 30px;
+    margin-left: 9.8px;
+    font-size: 0.48rem;
+  }
+body{
+  height:50vh ;
+}
+  .pcolor {
+    width: 50px;
+    font-size: 0.45rem;
+
+  }
+  img{
+    height: 25px;
+  }
+
+  .container{
+    min-height: 220px;
+    margin-top: -3px;
+    width: 105%;
+  }
+
+  
+#reset {
+  background-color: rgb(156, 11, 11);
+  border-radius: 10%;
+  height: 30px;
+  margin: -16px 0 0 0;
+  height: 20px;
+}
+
+
+  img{
+    height: 20px;
+    margin-left: -2px;
+  }
+
+
+  #dice{
+   width: 25px;
+   height: 25px;
+   font-size:0.33rem ;
+    
+  }
+  .emojies{
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+}
+
+
+
+
+@media   (min-width: 149px) and (max-width: 296.9px) {
+  .media {
+    /* background-color: #232931; */
+    width: 40px;
+    margin-left: 5px;
+    font-size: 0.6rem;
+  }
+body{
+  height:50vh ;
+}
+  .pcolor {
+    width: 50px;
+    font-size: 0.4rem;
+
+  }
+  img{
+  width: 12px;
+ 
+  }
+
+  .container{
+    min-height: 220px;
+    margin-top: -3px;
+    width: 80%;
+  }
+
+  
+#reset {
+  background-color: rgb(156, 11, 11);
+  border-radius: 10%;
+  height: 30px;
+  margin: -16px 0 0 0;
+  height: 20px;
+}
+
+
+  img{
+    height: 20px;
+    margin-left: -2px;
+  }
+
+
+  #dice{
+   width: 25px;
+   height: 25px;
+   font-size:0.33rem ;
+    
+  }
+  .emojies{
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+}
+
+
+
+@media (min-width: 297px) and (max-width: 411.9px) {
+  .media {
+    /* background-color: #232931; */
+    width: 60px;
+    margin-left: 0px;
+
+    height: 50px;
+  }
+  .pcolor {
+    position: relative;
+    width: 50px;
+    font-size: 1rem;
+    padding-top: 5px;
+
+  }
+  img{
+    height: 25px;
+  }
+.diceContainer{
+position: relative;
+}
+
+  .container{
+    min-height: 270px;
+  }
+  #dice{
+   width: 30px;
+   height: 40px;
+   font-size:0.5rem ;
+    
+  }
+
+
+  .roll{
+    margin-top: 0.5px;
+  }
+
+  
+#reset {
+  background-color: rgb(156, 11, 11);
+  border-radius: 10%;
+  height: 30px;
+  margin: 10px 0 0 0;
+  height: 30px;
+}
+
+
+
+  .emojies{
+    
+    margin-top: -35px;
+  }
+
+}
+
+
+
+@media (min-width: 420px) and (max-width: 428.9px){
+img{
+  height: 25px;
+}
+}
+
+@media (min-width: 405px) and (max-width: 500px){
+.pcolor {
+    width: 50px;
+    font-size: 1rem;
+margin-left: 18px;
+  }
+
 }

@@ -15,38 +15,55 @@
 
   <body>
     <div class="container">
-      <h1>A dice can settel it😂</h1>
+      <h3 id="top">A dice can settel it😂</h3>
 
       <div class="diceContainer">
-        <div class="dice" id="dice1">
-          <p id="playColor1"><strong>Player 1</strong></p>
-          <h3></h3>
-          <img class="img" alt="" src="images/dice6.png" />
 
-          <div class="player1">
-            <h4 id="player1Score">player1 Score: 0</h4>
-            <p id="emoji"></p>
+
+        <div class="con">
+          <p id="playColor1" class="pcolor"><strong>Player1</strong></p>
+          
+          <div class="playe">
+            <h5 id="player1Score" class="media">player1 Score: 0</h4>
+            <p id="emoji"  class="emojies"></p>
           </div>
         </div>
 
+
+
         <div class="roll">
-          <button type="submit">
-            <h2>Roll Dice</h2>
+          
+          <div class="imagDiv">
+           <img class="img" alt="" src="images/dice6.png" />
+            <img alt class="img" src="images/dice6.png" />
+          </div>
+         
+
+
+
+
+             <button id="dice" type="submit">
+            Roll Dice
           </button>
         </div>
 
-        <div class="dice" id="dice2">
-          <p id="playColor2"><strong>Player 2</strong></p>
-          <h3></h3>
-          <img alt class="img" src="images/dice6.png" />
-
-          <div class="player2">
-            <h4 id="player2Score">player2 Score: 0</h4>
-            <p id="emoji2"></p>
+        <div class="con">
+          <p id="playColor2" class="pcolor" ><strong>Player2</strong></p>
+        
+          <div class="playe">
+            <h5 class="media" id="player2Score">player2 Score: 0</h6>
+            <p id="emoji2" class="emojies"></p>
           </div>
         </div>
+
+        
+        
       </div>
-      <footer class="ter">www 🎲 App Brewery 🎲 com</footer>
+     
+     <button type="button" id="reset">Restart</button>
+      <div class="test">
+        
+      </div>
     </div>
 
     <script src="index.js"></script>

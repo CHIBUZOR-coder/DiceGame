@@ -8,7 +8,7 @@ function radb() {
   var b = Math.floor(Math.random() * 6) + 1;
   return b;
 }
-let resetbtn = document.querySelector("#reset");
+let resetbtn = document.querySelector("#set");
 var emoji = document.querySelector("#emoji");
 var emoji2 = document.querySelector("#emoji2");
 

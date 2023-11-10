@@ -15,7 +15,7 @@ body {
   min-height: 260px;
   margin: auto;
   text-align: center;
-  background-color: #222525;
+  background-color: #4a5c5c;
   margin-top: 70px;
 }
 
@@ -44,9 +44,15 @@ p {
 }
 
 img {
-  width: 30%;
-  height: 20px;
+  width: 40%;
+  height: 30px;
   margin-top: 5px;
+}
+
+.imiv {
+  height: 40px;
+  width: 100%;
+  margin: 40px auto 0 auto;
 }
 
 .roll {
@@ -69,10 +75,20 @@ button {
   margin: 15px 0 0 0;
 }
 
-#dice {
- margin-top: 10px;
-  width: 80%;
-  height: 50%;
+.dice {
+  position: relative;
+  margin-top: 10px;
+  width: 20%;
+  height: 70px;
+  margin: 5px 10px;
+}
+
+.btns {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: #a0061b;
+  margin-top: 44px;
 }
 
 .con {
@@ -94,199 +110,270 @@ button {
   background-color: #232931;
 }
 
-.playe{
+.playe {
   margin-top: -15px;
 }
 
-.imgDiv{
-margin-top: -90px;
-
+.imgDiv {
+  margin-top: -90px;
 }
 
-
-
-
-
-@media   (min-width: 0px) and (max-width: 148.9px) {
+@media (min-width: 0px) and (max-width: 148.9px) {
   .media {
     /* background-color: #232931; */
     width: 30px;
     margin-left: 9.8px;
     font-size: 0.48rem;
+    margin-top: 20px;
   }
-body{
-  height:50vh ;
-}
+  body {
+    height: 50vh;
+  }
   .pcolor {
     width: 50px;
     font-size: 0.45rem;
-
+    padding-top: 30px;
   }
-  img{
+  img {
     height: 25px;
   }
 
-  .container{
-    min-height: 220px;
+  .container {
+    min-height: 200px;
     margin-top: -3px;
     width: 105%;
   }
 
-  
-#reset {
-  background-color: rgb(156, 11, 11);
-  border-radius: 10%;
-  height: 30px;
-  margin: -16px 0 0 0;
-  height: 20px;
-}
-
-
-  img{
+  .reset {
+    background-color: rgb(156, 11, 11);
+    border-radius: 10%;
+    height: 30px;
+    margin: -16px 0 0 0;
     height: 20px;
-    margin-left: -2px;
   }
 
-
-  #dice{
-   width: 25px;
-   height: 25px;
-   font-size:0.33rem ;
-    
+  img {
+    width: 10px;
+    height: 10px;
   }
-  .emojies{
+
+  #dice {
+    width: 25px;
+    height: 25px;
+    font-size: 0.33rem;
+  }
+  .emojies {
     font-size: 1rem;
     margin-top: 5px;
   }
+
+  .btns {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #a0061b;
+  }
+  .dice {
+    font-size: 0.3rem;
+    width: 28px;
+    height: 30px;
+  }
 }
 
-
-
-
-@media   (min-width: 149px) and (max-width: 296.9px) {
+@media (min-width: 149px) and (max-width: 296.9px) {
   .media {
     /* background-color: #232931; */
     width: 40px;
     margin-left: 5px;
     font-size: 0.6rem;
   }
-body{
-  height:50vh ;
-}
+  body {
+    height: 50vh;
+  }
   .pcolor {
     width: 50px;
-    font-size: 0.4rem;
-
+    font-size: 0.6rem;
+    margin-top: 50px;
   }
-  img{
-  width: 12px;
- 
+  img {
+    width: 12px;
+  }
+  .imiv {
+    height: 40px;
+    width: 20px;
+    margin: 20px auto 0 auto;
   }
 
-  .container{
-    min-height: 220px;
+  .container {
+    min-height: 200px;
     margin-top: -3px;
-    width: 80%;
+    width: 90%;
   }
 
-  
-#reset {
-  background-color: rgb(156, 11, 11);
-  border-radius: 10%;
-  height: 30px;
-  margin: -16px 0 0 0;
-  height: 20px;
-}
-
-
-  img{
+  .reset {
+    background-color: rgb(156, 11, 11);
+    border-radius: 10%;
+    height: 30px;
+    margin: -16px 0 0 0;
     height: 20px;
-    margin-left: -2px;
   }
 
-
-  #dice{
-   width: 25px;
-   height: 25px;
-   font-size:0.33rem ;
-    
+  img {
+    height: 20px;
+    margin: 2px 2px 0 2px;
   }
-  .emojies{
+
+  #dice {
+    width: 25px;
+    height: 25px;
+    font-size: 0.33rem;
+  }
+  .emojies {
     font-size: 1rem;
     margin-top: 5px;
   }
+
+  .btns {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #a0061b;
+  }
+  .dice {
+    font-size: 0.4rem;
+    width: 36px;
+    height: 36px;
+  }
 }
-
-
 
 @media (min-width: 297px) and (max-width: 411.9px) {
   .media {
     /* background-color: #232931; */
-    width: 60px;
-    margin-left: 0px;
-
+    width: 100%;
+    font-size: 1.1rem;
     height: 50px;
   }
   .pcolor {
     position: relative;
-    width: 50px;
-    font-size: 1rem;
+    font-size: 1.12rem;
     padding-top: 5px;
-
   }
-  img{
+  img {
+    width: 24px;
     height: 25px;
   }
-.diceContainer{
-position: relative;
-}
 
-  .container{
+  .imiv {
+    height: 40px;
+    width: 140%;
+    margin: 50px 0 0 -18%;
+  }
+
+  .btns {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #a0061b;
+    margin-top: 44px;
+  }
+
+  .dice {
+    position: relative;
+    width: 25%;
+    height: 70px;
+    margin: 5px 10px;
+  }
+
+  .diceContainer {
+    position: relative;
+  }
+
+  .container {
+    width:;
     min-height: 270px;
   }
-  #dice{
-   width: 30px;
-   height: 40px;
-   font-size:0.5rem ;
-    
+  #dice {
+    width: 30px;
+    height: 40px;
+    font-size: 0.5rem;
   }
 
-
-  .roll{
+  .roll {
     margin-top: 0.5px;
   }
 
-  
-#reset {
-  background-color: rgb(156, 11, 11);
-  border-radius: 10%;
-  height: 30px;
-  margin: 10px 0 0 0;
-  height: 30px;
-}
+  .reset {
+    background-color: rgb(156, 11, 11);
+    border-radius: 10%;
+    height: 30px;
+    margin: 10px 0 0 0;
+    height: 30px;
+  }
 
-
-
-  .emojies{
-    
+  .emojies {
     margin-top: -35px;
   }
-
 }
 
-
-
-@media (min-width: 420px) and (max-width: 428.9px){
-img{
-  height: 25px;
-}
+@media (min-width: 420px) and (max-width: 428.9px) {
+  img {
+    height: 25px;
+  }
 }
 
-@media (min-width: 405px) and (max-width: 500px){
-.pcolor {
+@media (min-width: 405px) and (max-width: 500px) {
+  .pcolor {
     width: 50px;
     font-size: 1rem;
-margin-left: 18px;
+    margin-left: 18px;
+  }
+}
+
+@media (min-width: 599px) and (max-width: 700.9px) {
+  .dice {
+    position: relative;
+    width: 15%;
+    height: 70px;
+    margin: 5px 10px;
+  }
+}
+
+
+@media (min-width: 701px) and  (max-width: 1000px) {
+
+.dice {
+  position: relative;
+  width: 12%;
+  height: 70px;
+  margin: 5px 10px;
+}
+
+  .img {
+    width: 24px;
+    height: 25px;
+    padding: 0 2px;
   }
 
 }
+
+
+
+@media (min-width: 1001px) {
+
+.dice {
+  position: relative;
+  width: 10%;
+  height: 70px;
+  margin: 5px 10px;
+}
+
+
+  .img {
+    width: 24px;
+    height: 25px;
+    padding: 0 2px;
+  }
+
+
+}
+

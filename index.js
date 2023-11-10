@@ -117,7 +117,7 @@ function random() {
 // }
 
 // Getting the button and adding event listeners using Dom.
-var button = document.querySelector("button");
+var button = document.querySelector("#rol");
 console.log(button);
 button.addEventListener("click", random);
 button.addEventListener("click", change);
@@ -194,3 +194,30 @@ function reset() {
 
 resetbtn.addEventListener("click", reset);
 // resetbtn.addEventListener("click", heightDown);
+
+
+
+//Game Manual Open
+const manualContainer = document.querySelector(".manualContainer");
+let manualbtn = document.querySelector('.how');
+console.log(manualbtn);
+const modal = document.querySelector(".manualVisible");
+console.log(modal);
+manualbtn.addEventListener("click", function sett(){
+  manualContainer.style.display = "block";
+manualContainer.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+
+})
+
+
+
+
+//Game Manual Close 
+
+console.log(manualContainer);
+const closebtn = document.querySelector('.close');
+console.log(closebtn);
+closebtn.addEventListener('click', function hide(){
+   manualContainer.style.display = "none";
+  manualContainer.style.backgroundColor = "";
+})

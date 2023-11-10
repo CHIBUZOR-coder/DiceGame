@@ -1,11 +1,81 @@
+
+
+
 body {
   background-color: #1c5bc0;
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 100vh;
+}
+
+.manualContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  margin-top: -22px;
+  /* display:none; */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.manualVisible {
+  position: absolute;
+  min-height: 250px;
+  z-index: 2;
+  margin-top: 150px;
+
+  width: 70%;
+  background-color: aqua;
+  left: 15%;
+  top: -8%;
+  animation-name: animaMode;
+  animation-duration: 0.4s;
+}
+.closeContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: xx-large;
+  font-weight: bolder;
+  height: 30px;
+  width: 30px;
+  color: azure;
+  margin-top: 120px;
+
+  background-color: black;
+
+  margin-right: 10px;
+  border-radius: 2px solid black;
+}
+
+@keyframes animaMode {
+  from {
+    transform: translateY(-300px);
+    opacity: -1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.how {
+  position: relative;
+  background-color: rgb(156, 11, 11);
+  margin-top: 30px;
+  height: 50px;
+  border-radius: 4px;
+  z-index: 4;
 }
 
 .container {
@@ -36,7 +106,7 @@ h3 {
   color: #4ecca3;
 }
 
-p {
+.pcolor {
   font-size: 2rem;
   color: #4ecca3;
   font-family: "Indie Flower", cursive;
@@ -338,42 +408,32 @@ button {
   }
 }
 
-
-@media (min-width: 701px) and  (max-width: 1000px) {
-
-.dice {
-  position: relative;
-  width: 12%;
-  height: 70px;
-  margin: 5px 10px;
-}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .dice {
+    position: relative;
+    width: 12%;
+    height: 70px;
+    margin: 5px 10px;
+  }
 
   .img {
     width: 24px;
     height: 25px;
     padding: 0 2px;
   }
-
 }
-
-
 
 @media (min-width: 1001px) {
-
-.dice {
-  position: relative;
-  width: 10%;
-  height: 70px;
-  margin: 5px 10px;
-}
-
+  .dice {
+    position: relative;
+    width: 10%;
+    height: 70px;
+    margin: 5px 10px;
+  }
 
   .img {
     width: 24px;
     height: 25px;
     padding: 0 2px;
   }
-
-
 }
-

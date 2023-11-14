@@ -1,5 +1,5 @@
 // This Function bellow is used to generate random numbers for player 1&2. It will also be reused in other functions.
-//The function also 
+//The function also
 function radn() {
   const n = Math.floor(Math.random() * 6) + 1;
   return n;
@@ -14,6 +14,8 @@ var emoji = document.querySelector("#emoji");
 var emoji2 = document.querySelector("#emoji2");
 let indicator = document.querySelectorAll(".indicator");
 console.log(indicator);
+let winChant = document.querySelector(".win");
+console.log(winChant);
 
 // The bewlow function helps get click count
 let clickCount = 1;
@@ -90,7 +92,7 @@ function random() {
   let extractp11 = extractP1;
   extractp11 = Math.floor((extractP1 / 100) * 100);
   console.log(extractp11);
-   indicator[0].style.left = `${extractp11}%`;
+  indicator[0].style.left = `${extractp11}%`;
 
   //  indicator.style.left = `${extractP1}`;
 
@@ -104,8 +106,25 @@ function random() {
   let extractp22 = extractP2;
   extractp22 = Math.floor((extractP2 / 100) * 100);
   console.log(extractp22);
-     indicator[1].style.left = `${extractp22}%`;
+  indicator[1].style.left = `${extractp22}%`;
 
+  //indicator color change player1
+  if (extractP1 > 187 && extractP1 < 275)
+    indicator[0].style.backgroundColor = "blue";
+  if (extractP1 > 280 && extractP1 < 430)
+    indicator[0].style.backgroundColor = "#00008B";
+  else if (extractP1 > 430 && extractP1 < 515)
+    indicator[0].style.backgroundColor = "green";
+  else if (extractP1 > 515) indicator[0].style.backgroundColor = "white";
+
+  //indicator color change player2
+  if (extractP2 > 187 && extractP2 < 275)
+    indicator[1].style.backgroundColor = "blue";
+  if (extractP2 > 280 && extractP2 < 430)
+    indicator[1].style.backgroundColor = "#00008B";
+  else if (extractP2 > 430 && extractP2 < 515)
+    indicator[1].style.backgroundColor = "green";
+  else if (extractP2 > 515) indicator[1].style.backgroundColor = "white";
 
   //emoji reactions
   if (extractP1 < extractP2) {
@@ -120,7 +139,56 @@ function random() {
   }
   console.log(extractP2);
 
- 
+  //Auto reset
+  function Autoreset() {
+    clickCount = 1;
+
+    // Reset player1 score
+    var player1Score = document.querySelector("#player1Score");
+    player1Score.innerText = `${extractP1}`;
+
+    // Reset player2 score
+    var player2Score = document.querySelector("#player2Score");
+    player2Score.innerText = `${extractP2}`;
+
+    // // Reset emoji reactions
+    // emoji.innerText = "";
+    // emoji2.innerText = "";
+
+    function setemoji(){
+      if (extractP1 > extractP2) {
+        emoji.innerText = "✊😎";
+        emoji2.innerText = "😑";
+      } else if (extract1 < extract2) {
+        emoji.innerText = "😑";
+        emoji2.innerText = "✊😎";
+      }
+    }
+
+    //reset indicator position
+    indicator[0].style.left = "10%";
+    indicator[1].style.left = "10%";
+    indicator[0].style.backgroundColor = "red";
+    indicator[1].style.backgroundColor = "red";
+    button.addEventListener("click", function retainScore() {
+      player1Score.innerText = `${extractP1}`;
+      player2Score.innerText = `${extractP2}`;
+      defaultPlayer2();
+      defaultPlayer1();
+      setemoji();
+
+    });
+  }
+
+  if (extractP1 >= 655) {
+    Autoreset();
+    emoji.innerText = "✊😎";
+    winChant.innerText = "Player1 wins🥳";
+  } else if (extractP2 >= 655) {
+    Autoreset();
+    emoji.innerText = "✊😎";
+    winChant.innerText = "Player2 wins🥳";
+  }
 }
 console.log("hi");
 
@@ -219,6 +287,12 @@ function reset() {
   // Reset player colors
   player1();
   defaultPlayer2();
+
+  //reset indicator position
+  indicator[0].style.left = "10%";
+  indicator[1].style.left = "10%";
+  indicator[0].style.backgroundColor = "red";
+  indicator[1].style.backgroundColor = "red";
 }
 
 resetbtn.addEventListener("click", reset);
@@ -242,5 +316,5 @@ const closebtn = document.querySelector(".close");
 console.log(closebtn);
 closebtn.addEventListener("click", function hide() {
   manualContainer.style.display = "none";
-  manualContainer.style.backgroundColor = "";
+  manualContainer.style.backgroundColor = "transparent";
 });

@@ -212,7 +212,7 @@ button {
 }
 
 .start {
-  background-color: green;
+  background-color:darkred;
   position: relative;
   flex-direction: column;
 }
@@ -233,14 +233,14 @@ button {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: aliceblue;
+  background-color:red;
   left: 40%;
   top: 6px;
   z-index: 2;
 }
 
 .finish {
-  background-color: red;
+  background-color: green;
   color: rgb(144, 172, 172);
 }
 

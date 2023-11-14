@@ -1,4 +1,5 @@
 // This Function bellow is used to generate random numbers for player 1&2. It will also be reused in other functions.
+//The function also 
 function radn() {
   const n = Math.floor(Math.random() * 6) + 1;
   return n;
@@ -11,6 +12,8 @@ function radb() {
 let resetbtn = document.querySelector("#set");
 var emoji = document.querySelector("#emoji");
 var emoji2 = document.querySelector("#emoji2");
+let indicator = document.querySelectorAll(".indicator");
+console.log(indicator);
 
 // The bewlow function helps get click count
 let clickCount = 1;
@@ -20,7 +23,7 @@ function count() {
 }
 
 //   This function below is used to change the dice roll by changing image attribute. It works with the while loop functin.
-
+//This alos helps show the value of each dice roll
 function random() {
   var status = "player1";
   console.log(status);
@@ -79,13 +82,30 @@ function random() {
 
   //EXtracting Player1 scores
   const extract1 = document.querySelector("#player1Score");
+  console.log(extract1);
   const extractP1 = parseInt(extract1.innerText.split(" ")[2]);
   console.log(extractP1);
 
+  //indicator movement code for player1
+  let extractp11 = extractP1;
+  extractp11 = Math.floor((extractP1 / 100) * 100);
+  console.log(extractp11);
+   indicator[0].style.left = `${extractp11}%`;
+
+  //  indicator.style.left = `${extractP1}`;
+
   //EXtracting Player2 scores
   const extract2 = document.querySelector("#player2Score");
+  console.log(extract2);
   const extractP2 = parseInt(extract2.innerText.split(" ")[2]);
   console.log(extractP2);
+
+  //indicator movement code for player2
+  let extractp22 = extractP2;
+  extractp22 = Math.floor((extractP2 / 100) * 100);
+  console.log(extractp22);
+     indicator[1].style.left = `${extractp22}%`;
+
 
   //emoji reactions
   if (extractP1 < extractP2) {
@@ -98,10 +118,22 @@ function random() {
     emoji.innerText = "😐";
     emoji2.innerText = "😐";
   }
+  console.log(extractP2);
 
  
 }
+console.log("hi");
 
+// //EXtracting Player1 scores
+// const extract1 = document.querySelector("#player1Score");
+// console.log(extract1);
+// const extractP1 = parseInt(extract1.innerText.split(" ")[2]);
+// console.log(extractP1);
+
+// //Game indicator
+// let indicator = document.querySelector(".indicator");
+// console.log(indicator);
+// indicator.style.left = `${extractP1}`;
 
 // let container = document.querySelector(".container");
 // function height(){
@@ -168,7 +200,6 @@ function change() {
   }
 }
 
-
 //Reset game
 function reset() {
   clickCount = 1;
@@ -190,34 +221,26 @@ function reset() {
   defaultPlayer2();
 }
 
-
-
 resetbtn.addEventListener("click", reset);
 // resetbtn.addEventListener("click", heightDown);
 
-
-
 //Game Manual Open
 const manualContainer = document.querySelector(".manualContainer");
-let manualbtn = document.querySelector('.how');
+let manualbtn = document.querySelector(".how");
 console.log(manualbtn);
 const modal = document.querySelector(".manualVisible");
 console.log(modal);
-manualbtn.addEventListener("click", function sett(){
+manualbtn.addEventListener("click", function sett() {
   manualContainer.style.display = "block";
-manualContainer.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+  manualContainer.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+});
 
-})
-
-
-
-
-//Game Manual Close 
+//Game Manual Close k
 
 console.log(manualContainer);
-const closebtn = document.querySelector('.close');
+const closebtn = document.querySelector(".close");
 console.log(closebtn);
-closebtn.addEventListener('click', function hide(){
-   manualContainer.style.display = "none";
+closebtn.addEventListener("click", function hide() {
+  manualContainer.style.display = "none";
   manualContainer.style.backgroundColor = "";
-})
+});

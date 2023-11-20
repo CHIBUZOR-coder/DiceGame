@@ -50,8 +50,16 @@ function random() {
     var score = parseInt(player1Score.innerText.split(" ")[2]); // Get the current score
 
     // Calculate the new score
-    var newScore = score + all;
-    console.log(newScore);
+
+    // if(all = 12)
+    // newScore = score;
+    // else
+    var newScore;
+
+    newScore = score + all;
+
+    if (n === b) newScore = score + all - 10;
+    else newScore = score + all;
 
     // Update the score and display it
     player1Score.innerText = `Player1 Score: ${newScore}`;
@@ -66,7 +74,11 @@ function random() {
     var score = parseInt(player2Score.innerText.split(" ")[2]); // Get the current score
 
     // Calculate the new score
-    var new2Score = score + all;
+    var new2Score;
+    
+    if (n === b) new2Score = score + all - 10;
+    else new2Score = score + all;
+  
     console.log(new2Score);
 
     // Update the score and display it
@@ -112,7 +124,7 @@ function random() {
   if (extractP1 > 187 && extractP1 < 275)
     indicator[0].style.backgroundColor = "blue";
   if (extractP1 > 280 && extractP1 < 430)
-    indicator[0].style.backgroundColor = "#00008B";
+    indicator[0].style.backgroundColor = "black";
   else if (extractP1 > 430 && extractP1 < 515)
     indicator[0].style.backgroundColor = "green";
   else if (extractP1 > 515) indicator[0].style.backgroundColor = "white";
@@ -121,7 +133,7 @@ function random() {
   if (extractP2 > 187 && extractP2 < 275)
     indicator[1].style.backgroundColor = "blue";
   if (extractP2 > 280 && extractP2 < 430)
-    indicator[1].style.backgroundColor = "#00008B";
+    indicator[1].style.backgroundColor = "black";
   else if (extractP2 > 430 && extractP2 < 515)
     indicator[1].style.backgroundColor = "green";
   else if (extractP2 > 515) indicator[1].style.backgroundColor = "white";
@@ -155,40 +167,36 @@ function random() {
     // emoji.innerText = "";
     // emoji2.innerText = "";
 
-    function setemoji(){
-      if (extractP1 > extractP2) {
-        emoji.innerText = "✊😎";
-        emoji2.innerText = "😑";
-      } else if (extract1 < extract2) {
-        emoji.innerText = "😑";
-        emoji2.innerText = "✊😎";
-      }
-    }
+    // function setemoji(){
+    //   if (extractP1 > extractP2) {
+    //     emoji.innerText = "✊😎";
+    //     emoji2.innerText = "😑";
+    //   } else if (extract1 < extract2) {
+    //     emoji.innerText = "😑";
+    //     emoji2.innerText = "✊😎";
+    //   }
+    // }
 
-    //reset indicator position
-    indicator[0].style.left = "10%";
-    indicator[1].style.left = "10%";
-    indicator[0].style.backgroundColor = "red";
-    indicator[1].style.backgroundColor = "red";
     button.addEventListener("click", function retainScore() {
       player1Score.innerText = `${extractP1}`;
       player2Score.innerText = `${extractP2}`;
       defaultPlayer2();
       defaultPlayer1();
       setemoji();
-
     });
   }
 
-  if (extractP1 >= 655) {
+  if (extractP1 >= 600) {
     Autoreset();
     emoji.innerText = "✊😎";
     winChant.innerText = "Player1 wins🥳";
-  } else if (extractP2 >= 655) {
+  } else if (extractP2 >= 600) {
     Autoreset();
-    emoji.innerText = "✊😎";
+    emoji2.innerText = "✊😎";
     winChant.innerText = "Player2 wins🥳";
   }
+
+  console.log(emoji2.innerText);
 }
 console.log("hi");
 

@@ -231,8 +231,8 @@ button {
 
 .indicator {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 15%;
+  height: 17%;
   background-color:red;
   left: 40%;
   top: 6px;
@@ -809,6 +809,10 @@ button {
 
     height: 30px;
   }
+  
+  .indicator{
+    height: 10%;
+  }
 }
 
 @media (min-width: 321px) and (max-width: 411.9px) {
@@ -848,6 +852,7 @@ button {
     width: 25%;
     height: 70px;
     margin: 5px 10px;
+
   }
 
   .diceContainer {
@@ -869,6 +874,13 @@ button {
 
   .emojies {
     margin-top: -30px;
+  }
+  .grid-item{
+    font-size: 0.7rem;
+  }
+
+  .indicator{
+    height: 10%;
   }
 }
 

@@ -23,21 +23,27 @@ var par2 = document.querySelector("#playColor2");
 var ButtonClicked = false;
 // The bewlow function helps get click count
 
- 
 resetbtn.addEventListener("click", function clickcheck() {
   ButtonClicked = true;
+  clickCount = 1;
   console.log("Button Clicked!");
 });
 
 let clickCount = 0;
+
 function count() {
   clickCount++;
   console.log(clickCount);
 }
 
+function countt() {
+  // clickCount = 1;
+  clickCount++;
+  console.log(clickCount);
+}
 
+ count();
 
-count();
 indicator[0].style.left = "30%";
 indicator[1].style.left = "30%";
 
@@ -159,9 +165,10 @@ function random() {
   //Auto reset
   function Autoreset() {
     button.removeEventListener("click", random);
-     button.removeEventListener("click", change);
-     defaultPlayer1();
-     defaultPlayer2();
+    button.removeEventListener("click", change);
+      button.removeEventListener("click", count);
+    defaultPlayer1();
+    defaultPlayer2();
 
     // Reset player1 score
     // var player1Score = document.querySelector("#player1Score");
@@ -207,10 +214,18 @@ console.log("hi");
 
 // Adding event listeners using Dom.
 
-button.addEventListener("click", random);
+if (ButtonClicked) {
+  // clickCount = clickCount - clickCount;
 
-button.addEventListener("click", change);
+  console.log("clicked");
+} else {
+  clickCount = 1;
+  console.log("Not clicked");
+}
+button.addEventListener("click", random);
 button.addEventListener("click", count);
+button.addEventListener("click", change);
+
 // button.addEventListener("click", btnStyle);
 // button.addEventListener("click", height);
 console.log(button);
@@ -239,12 +254,13 @@ function defaultPlayer2() {
 }
 
 // This fuction below is the while loop that set conditions for the change(), player1(), player2(), defaultPlayer1() and defaultPlayer2() functions
-player1();
+ player1();
 
 function change() {
-  defaultPlayer1();
+  //  defaultPlayer1();
+  console.log(clickCount);
   while (clickCount) {
-    if (clickCount % 2 != 0) {
+    if (clickCount % 2 === 0) {
       player2();
       defaultPlayer1();
       break;
@@ -258,9 +274,11 @@ function change() {
 
 //Reset game
 function reset() {
-   clickCount = 0;
-
+  console.log(clickCount);
   button.addEventListener("click", random);
+  button.addEventListener("click", change);
+   button.addEventListener("click", count);
+
   // Reset player1 score
   var player1Score = document.querySelector("#player1Score");
   player1Score.innerText = "Player1 Score: 0";

@@ -131,7 +131,7 @@ function random() {
   if (extractP1 > 280 && extractP1 < 430)
     indicator[0].style.backgroundColor = "black";
   else if (extractP1 > 430 && extractP1 < 515)
-    indicator[0].style.backgroundColor = "black";
+    indicator[0].style.backgroundColor = "green";
   else if (extractP1 > 515) indicator[0].style.backgroundColor = "white";
 
   //indicator color change player2
@@ -140,7 +140,7 @@ function random() {
   if (extractP2 > 280 && extractP2 < 430)
     indicator[1].style.backgroundColor = "black";
   else if (extractP2 > 430 && extractP2 < 515)
-    indicator[1].style.backgroundColor = "black";
+    indicator[1].style.backgroundColor = "green";
   else if (extractP2 > 515) indicator[1].style.backgroundColor = "white";
 
   //emoji reactions

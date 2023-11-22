@@ -7,27 +7,30 @@ body {
   align-items: center;
   height: 100vh;
 }
-
+li {
+  margin-top: 10px;
+  color: #072433;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 .manualContainer {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 110%;
   z-index: 3;
   margin-top: -22px;
   display: none;
   background-color: rgba(0, 0, 0, 0.6);
 }
-
 .manualVisible {
   position: absolute;
-  min-height: 250px;
+  min-height: 400px;
   z-index: 3;
-  margin-top: 150px;
+  margin-top: 200px;
   box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);
   width: 70%;
   background-color: aqua;
   left: 15%;
-  top: -8%;
+  top: -30%;
   animation-name: animaMode;
   animation-duration: 0.4s;
 }
@@ -212,7 +215,7 @@ button {
 }
 
 .start {
-  background-color:darkred;
+  background-color: darkred;
   position: relative;
   flex-direction: column;
 }
@@ -233,8 +236,8 @@ button {
   position: absolute;
   width: 15%;
   height: 17%;
-  background-color:red;
-  left: 40%;
+  background-color: red;
+  /* left: 40%; */
   top: 6px;
   z-index: 2;
 }
@@ -439,13 +442,39 @@ button {
     position: relative;
     font-size: 0.6rem;
   }
-
+  /* 
   .manualVisible {
     position: relative;
     font-size: 0.8rem;
     margin-top: 90px;
     min-height: 120px;
     height: 30%;
+  } */
+
+  .close {
+    margin-top: 5px;
+  }
+  .manualVisible {
+    position: absolute;
+    height: 10vh;
+    z-index: 3;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-top: 100px;
+    box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);
+    width: 80%;
+    font-size: 0.34rem;
+    background-color: aqua;
+    left: 15%;
+    top: -30%;
+    text-align: left;
+    animation-name: animaMode;
+    animation-duration: 0.4s;
+    padding-left: -20px;
+    margin-left: -5px;
   }
 
   .close {
@@ -608,14 +637,11 @@ button {
     width: 100%;
   }
 
-
-  
   .grid-container {
     position: relative;
     transform: rotate(270deg);
 
     margin-top: 230px;
-
   }
 
   .grid-item {
@@ -623,7 +649,7 @@ button {
     font-size: 0.6rem;
     min-width: 0.2%;
     height: 3px;
-  } 
+  }
   .manualContainer {
     width: 120%;
     min-height: 160%;
@@ -631,12 +657,11 @@ button {
 
   .manualVisible {
     position: relative;
-  
+
     margin-top: 480px;
     min-height: 25%;
     width: 70%;
   }
-
 
   img {
     height: 20px;
@@ -734,15 +759,28 @@ button {
     margin-top: px;
     height: 30px;
   }
-  .grid-item{
-   
+  .grid-item {
     font-size: 0.7rem;
   }
+
+  .close {
+    margin-top: 5px;
+  }
+  .manualVisible {
+    position: absolute;
+    min-height: 400px;
+    z-index: 3;
+    margin-top: 150px;
+    box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);
+    width: 70%;
+    background-color: aqua;
+    left: 15%;
+    top: -30%;
+    font-size: 0.9rem;
+    animation-name: animaMode;
+    animation-duration: 0.4s;
+  }
 }
-
-
-
-
 
 @media (min-width: 320px) and (max-width: 320.9px) {
   .media {
@@ -806,16 +844,32 @@ button {
   }
 
   .how {
-
     height: 30px;
   }
-  
-  .indicator{
+
+  .indicator {
     height: 10%;
+  }
+  .close {
+    margin-top: 5px;
+  }
+  .manualVisible {
+    position: absolute;
+    min-height: 400px;
+    z-index: 3;
+    margin-top: 150px;
+    box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);
+    width: 70%;
+    background-color: aqua;
+    left: 15%;
+    top: -30%;
+    font-size: 0.9rem;
+    animation-name: animaMode;
+    animation-duration: 0.4s;
   }
 }
 
-@media (min-width: 321px) and (max-width: 411.9px) {
+@media (min-width: 321px) and (max-width: 410.9px) {
   .media {
     /* background-color: #232931; */
     width: 100%;
@@ -852,7 +906,6 @@ button {
     width: 25%;
     height: 70px;
     margin: 5px 10px;
-
   }
 
   .diceContainer {
@@ -875,18 +928,72 @@ button {
   .emojies {
     margin-top: -30px;
   }
-  .grid-item{
+  .grid-item {
     font-size: 0.7rem;
   }
 
-  .indicator{
+  .indicator {
     height: 10%;
+  }
+
+  .close {
+    margin-top: 5px;
+  }
+  .manualVisible {
+    position: absolute;
+    min-height: 400px;
+    z-index: 3;
+    margin-top: 280px;
+    box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);
+    width: 70%;
+    font-size: 0.9rem;
+    background-color: aqua;
+    left: 15%;
+    top: -30%;
+    animation-name: animaMode;
+    animation-duration: 0.4s;
   }
 }
 
-@media (min-width: 420px) and (max-width: 428.9px) {
+@media (min-width: 411px) and (max-width: 428.9px) {
   img {
     height: 25px;
+  }
+  .close {
+    margin-top: 8px;
+  }
+  .manualVisible {
+    position: absolute;
+    min-height: 370px;
+    z-index: 3;
+    margin-top: 280px;
+    box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);
+    width: 70%;
+    background-color: aqua;
+    font-size: 0.9rem;
+    left: 15%;
+    top: -30%;
+    animation-name: animaMode;
+    animation-duration: 0.4s;
+  }
+}
+
+@media (min-width: 429px) and (max-width: 499.9px) {
+  .close {
+    margin-top: 5px;
+  }
+  .manualVisible {
+    position: absolute;
+    min-height: 400px;
+    z-index: 3;
+    margin-top: 200px;
+    box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);
+    width: 70%;
+    background-color: aqua;
+    left: 15%;
+    top: -30%;
+    animation-name: animaMode;
+    animation-duration: 0.4s;
   }
 }
 
@@ -956,5 +1063,24 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media (min-width: 500px) {
+  .close {
+    margin-top: 60px;
+  }
+  .manualVisible {
+    position: absolute;
+    min-height: 400px;
+    z-index: 3;
+    margin-top: 200px;
+    box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);
+    width: 70%;
+    background-color: aqua;
+    left: 15%;
+    top: -30%;
+    animation-name: animaMode;
+    animation-duration: 0.4s;
   }
 }

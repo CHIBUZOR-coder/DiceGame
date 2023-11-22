@@ -9,6 +9,8 @@ function radb() {
   var b = Math.floor(Math.random() * 6) + 1;
   return b;
 }
+
+var button = document.querySelector("#rol");
 let resetbtn = document.querySelector("#set");
 var emoji = document.querySelector("#emoji");
 var emoji2 = document.querySelector("#emoji2");
@@ -16,13 +18,28 @@ let indicator = document.querySelectorAll(".indicator");
 console.log(indicator);
 let winChant = document.querySelector(".win");
 console.log(winChant);
-
+var par1 = document.querySelector("#playColor1");
+var par2 = document.querySelector("#playColor2");
+var ButtonClicked = false;
 // The bewlow function helps get click count
-let clickCount = 1;
+
+ 
+resetbtn.addEventListener("click", function clickcheck() {
+  ButtonClicked = true;
+  console.log("Button Clicked!");
+});
+
+let clickCount = 0;
 function count() {
   clickCount++;
   console.log(clickCount);
 }
+
+
+
+count();
+indicator[0].style.left = "30%";
+indicator[1].style.left = "30%";
 
 //   This function below is used to change the dice roll by changing image attribute. It works with the while loop functin.
 //This alos helps show the value of each dice roll
@@ -50,21 +67,13 @@ function random() {
     var score = parseInt(player1Score.innerText.split(" ")[2]); // Get the current score
 
     // Calculate the new score
-
-    // if(all = 12)
-    // newScore = score;
-    // else
     var newScore;
-
-    newScore = score + all;
 
     if (n === b) newScore = score + all - 10;
     else newScore = score + all;
 
     // Update the score and display it
     player1Score.innerText = `Player1 Score: ${newScore}`;
-    b = newScore;
-    return b;
   }
 
   // player2score Generator
@@ -75,17 +84,13 @@ function random() {
 
     // Calculate the new score
     var new2Score;
-    
+
     if (n === b) new2Score = score + all - 10;
     else new2Score = score + all;
-  
     console.log(new2Score);
 
     // Update the score and display it
     player2Score.innerText = `Player2 Score: ${new2Score}`;
-
-    b2 = new2Score;
-    return b2;
   }
 
   if (clickCount % 2 != 0) {
@@ -126,7 +131,7 @@ function random() {
   if (extractP1 > 280 && extractP1 < 430)
     indicator[0].style.backgroundColor = "black";
   else if (extractP1 > 430 && extractP1 < 515)
-    indicator[0].style.backgroundColor = "green";
+    indicator[0].style.backgroundColor = "black";
   else if (extractP1 > 515) indicator[0].style.backgroundColor = "white";
 
   //indicator color change player2
@@ -135,7 +140,7 @@ function random() {
   if (extractP2 > 280 && extractP2 < 430)
     indicator[1].style.backgroundColor = "black";
   else if (extractP2 > 430 && extractP2 < 515)
-    indicator[1].style.backgroundColor = "green";
+    indicator[1].style.backgroundColor = "black";
   else if (extractP2 > 515) indicator[1].style.backgroundColor = "white";
 
   //emoji reactions
@@ -153,86 +158,63 @@ function random() {
 
   //Auto reset
   function Autoreset() {
-    clickCount = 1;
+    button.removeEventListener("click", random);
+     button.removeEventListener("click", change);
+     defaultPlayer1();
+     defaultPlayer2();
 
     // Reset player1 score
-    var player1Score = document.querySelector("#player1Score");
-    player1Score.innerText = `${extractP1}`;
+    // var player1Score = document.querySelector("#player1Score");
+    // player1Score.innerText = "Player1 Score: 0";
 
     // Reset player2 score
-    var player2Score = document.querySelector("#player2Score");
-    player2Score.innerText = `${extractP2}`;
+    // var player2Score = document.querySelector("#player2Score");
+    // player2Score.innerText = "Player2 Score: 0";
 
-    // // Reset emoji reactions
+    // Reset emoji reactions
     // emoji.innerText = "";
     // emoji2.innerText = "";
 
-    // function setemoji(){
-    //   if (extractP1 > extractP2) {
-    //     emoji.innerText = "✊😎";
-    //     emoji2.innerText = "😑";
-    //   } else if (extract1 < extract2) {
-    //     emoji.innerText = "😑";
-    //     emoji2.innerText = "✊😎";
-    //   }
-    // }
+    // Reset player colors
 
-    button.addEventListener("click", function retainScore() {
-      player1Score.innerText = `${extractP1}`;
-      player2Score.innerText = `${extractP2}`;
-      defaultPlayer2();
-      defaultPlayer1();
-      setemoji();
-    });
+    defaultPlayer2();
+    defaultPlayer1();
+
+    //reset indicator position
+    indicator[0].style.left = "40%";
+    indicator[1].style.left = "40%";
+    indicator[0].style.backgroundColor = "red";
+    indicator[1].style.backgroundColor = "red";
+    winChant.innerText = " ";
   }
+  // resetbtn.addEventListener("click", reset);
 
   if (extractP1 >= 600) {
     Autoreset();
     emoji.innerText = "✊😎";
     winChant.innerText = "Player1 wins🥳";
+    player1Score.innerText = `${extractP1}`;
   } else if (extractP2 >= 600) {
     Autoreset();
     emoji2.innerText = "✊😎";
     winChant.innerText = "Player2 wins🥳";
+    player2Score.innerText = `${extractP2}`;
   }
 
   console.log(emoji2.innerText);
 }
 console.log("hi");
 
-// //EXtracting Player1 scores
-// const extract1 = document.querySelector("#player1Score");
-// console.log(extract1);
-// const extractP1 = parseInt(extract1.innerText.split(" ")[2]);
-// console.log(extractP1);
+// Adding event listeners using Dom.
 
-// //Game indicator
-// let indicator = document.querySelector(".indicator");
-// console.log(indicator);
-// indicator.style.left = `${extractP1}`;
-
-// let container = document.querySelector(".container");
-// function height(){
-//    container.style.minHeight = '320px';
-// }
-
-// function heightDown() {
-//   container.style.minHeight = "270px";
-// }
-
-// function btnStyle() {
-//   resetbtn.style.marginTop = "-50px";
-// }
-
-// Getting the button and adding event listeners using Dom.
-var button = document.querySelector("#rol");
-console.log(button);
 button.addEventListener("click", random);
+
 button.addEventListener("click", change);
 button.addEventListener("click", count);
 // button.addEventListener("click", btnStyle);
 // button.addEventListener("click", height);
 console.log(button);
+console.log(clickCount);
 
 // player color when playing
 function player1() {
@@ -247,15 +229,13 @@ function player2() {
 
 // player color when not playing
 function defaultPlayer1() {
-  var par = document.querySelector("#playColor1");
-  console.log(par);
-  par.style.color = " #4ECCA3";
+  console.log(par1);
+  par1.style.color = " #4ECCA3";
 }
 
 function defaultPlayer2() {
-  var par = document.querySelector("#playColor2");
-  console.log(par);
-  par.style.color = "#4ECCA3";
+  console.log(par2);
+  par2.style.color = "#4ECCA3";
 }
 
 // This fuction below is the while loop that set conditions for the change(), player1(), player2(), defaultPlayer1() and defaultPlayer2() functions
@@ -278,8 +258,9 @@ function change() {
 
 //Reset game
 function reset() {
-  clickCount = 1;
+   clickCount = 0;
 
+  button.addEventListener("click", random);
   // Reset player1 score
   var player1Score = document.querySelector("#player1Score");
   player1Score.innerText = "Player1 Score: 0";
@@ -301,10 +282,9 @@ function reset() {
   indicator[1].style.left = "10%";
   indicator[0].style.backgroundColor = "red";
   indicator[1].style.backgroundColor = "red";
+  winChant.innerText = " ";
 }
-
 resetbtn.addEventListener("click", reset);
-// resetbtn.addEventListener("click", heightDown);
 
 //Game Manual Open
 const manualContainer = document.querySelector(".manualContainer");

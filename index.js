@@ -294,6 +294,22 @@ function reset() {
   // Reset player colors
   player1();
   defaultPlayer2();
+  
+function change() {
+  //  defaultPlayer1();
+  console.log(clickCount);
+  while (clickCount) {
+    if (clickCount % 2 === 1) {
+      player2();
+      defaultPlayer1();
+      break;
+    } else {
+      player1();
+      defaultPlayer2();
+      break;
+    }
+  }
+}
 
   //reset indicator position
   indicator[0].style.left = "10%";

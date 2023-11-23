@@ -21,6 +21,8 @@ console.log(winChant);
 var par1 = document.querySelector("#playColor1");
 var par2 = document.querySelector("#playColor2");
 var ButtonClicked = false;
+let clickCount = 1;
+var countt;
 // The bewlow function helps get click count
 
 resetbtn.addEventListener("click", function clickcheck() {
@@ -29,25 +31,14 @@ resetbtn.addEventListener("click", function clickcheck() {
   console.log("Button Clicked!");
 });
 
-let clickCount = 0;
+// let clickCount = 0;
 
-function count() {
-  clickCount++;
-  console.log(clickCount);
-}
+indicator[0].style.left = "40%";
+indicator[1].style.left = "40%";
 
-function countt() {
-  // clickCount = 1;
-  clickCount++;
-  console.log(clickCount);
-}
+player1();
 
- count();
-
-indicator[0].style.left = "30%";
-indicator[1].style.left = "30%";
-
-//   This function below is used to change the dice roll by changing image attribute. It works with the while loop functin.
+//   This function below is the heart of the game used to change the dice roll by changing image attribute. It works with the while loop functin.
 //This alos helps show the value of each dice roll
 function random() {
   var status = "player1";
@@ -55,6 +46,29 @@ function random() {
   var n = radn();
   var b = radb();
   var all = n + b;
+
+  function count() {
+    console.log(clickCount);
+
+    if (clickCount % 2 != 0) {
+      player1Score();
+      console.log(clickCount);
+    } else {
+      player2Score();
+      console.log(clickCount);
+    }
+    clickCount = clickCount + 1;
+    if (clickCount % 2 !== 0) {
+      player1();
+      defaultPlayer2();
+    } else {
+      player2();
+      defaultPlayer1();
+    }
+  }
+
+  count();
+
 
   // player1 random image Generator
   var img = document.querySelectorAll("img")[0];
@@ -65,6 +79,7 @@ function random() {
   var img1 = document.querySelectorAll("img")[1];
   var imagesrc2 = "images/dice" + b + ".png";
   img1.setAttribute("src", imagesrc2);
+
 
   // player1score Generator
   function player1Score() {
@@ -82,6 +97,7 @@ function random() {
     player1Score.innerText = `Player1 Score: ${newScore}`;
   }
 
+
   // player2score Generator
   function player2Score() {
     var player2Score = document.querySelector("#player2Score");
@@ -90,7 +106,7 @@ function random() {
 
     // Calculate the new score
     var new2Score;
-
+    console.log(clickCount);
     if (n === b) new2Score = score + all - 10;
     else new2Score = score + all;
     console.log(new2Score);
@@ -99,11 +115,7 @@ function random() {
     player2Score.innerText = `Player2 Score: ${new2Score}`;
   }
 
-  if (clickCount % 2 != 0) {
-    player1Score();
-  } else {
-    player2Score();
-  }
+
 
   //EXtracting Player1 scores
   const extract1 = document.querySelector("#player1Score");
@@ -117,7 +129,6 @@ function random() {
   console.log(extractp11);
   indicator[0].style.left = `${extractp11}%`;
 
-  //  indicator.style.left = `${extractP1}`;
 
   //EXtracting Player2 scores
   const extract2 = document.querySelector("#player2Score");
@@ -160,30 +171,15 @@ function random() {
     emoji.innerText = "😐";
     emoji2.innerText = "😐";
   }
-  console.log(extractP2);
 
-  //Auto reset
+  // Auto reset
   function Autoreset() {
     button.removeEventListener("click", random);
-    button.removeEventListener("click", change);
-      button.removeEventListener("click", count);
+    clickCount = 0;
     defaultPlayer1();
     defaultPlayer2();
 
-    // Reset player1 score
-    // var player1Score = document.querySelector("#player1Score");
-    // player1Score.innerText = "Player1 Score: 0";
-
-    // Reset player2 score
-    // var player2Score = document.querySelector("#player2Score");
-    // player2Score.innerText = "Player2 Score: 0";
-
-    // Reset emoji reactions
-    // emoji.innerText = "";
-    // emoji2.innerText = "";
-
-    // Reset player colors
-
+    //End of game player color
     defaultPlayer2();
     defaultPlayer1();
 
@@ -194,7 +190,6 @@ function random() {
     indicator[1].style.backgroundColor = "red";
     winChant.innerText = " ";
   }
-  // resetbtn.addEventListener("click", reset);
 
   if (extractP1 >= 600) {
     Autoreset();
@@ -208,28 +203,12 @@ function random() {
     player2Score.innerText = `${extractP2}`;
   }
 
-  console.log(emoji2.innerText);
 }
-console.log("hi");
 
-// Adding event listeners using Dom.
-
-if (ButtonClicked) {
-  // clickCount = clickCount - clickCount;
-
-  console.log("clicked");
-} else {
-  clickCount = 1;
-  console.log("Not clicked");
-}
+// Adding event listeners to Roll button.
 button.addEventListener("click", random);
-button.addEventListener("click", count);
-button.addEventListener("click", change);
 
-// button.addEventListener("click", btnStyle);
-// button.addEventListener("click", height);
-console.log(button);
-console.log(clickCount);
+
 
 // player color when playing
 function player1() {
@@ -253,31 +232,10 @@ function defaultPlayer2() {
   par2.style.color = "#4ECCA3";
 }
 
-// This fuction below is the while loop that set conditions for the change(), player1(), player2(), defaultPlayer1() and defaultPlayer2() functions
- player1();
-
-function change() {
-  //  defaultPlayer1();
-  console.log(clickCount);
-  while (clickCount) {
-    if (clickCount % 2 === 0) {
-      player2();
-      defaultPlayer1();
-      break;
-    } else {
-      player1();
-      defaultPlayer2();
-      break;
-    }
-  }
-}
-
 //Reset game
 function reset() {
   console.log(clickCount);
   button.addEventListener("click", random);
-  button.addEventListener("click", change);
-   button.addEventListener("click", count);
 
   // Reset player1 score
   var player1Score = document.querySelector("#player1Score");
@@ -294,26 +252,10 @@ function reset() {
   // Reset player colors
   player1();
   defaultPlayer2();
-  
-function change() {
-  //  defaultPlayer1();
-  console.log(clickCount);
-  while (clickCount) {
-    if (clickCount % 2 === 1) {
-      player2();
-      defaultPlayer1();
-      break;
-    } else {
-      player1();
-      defaultPlayer2();
-      break;
-    }
-  }
-}
 
   //reset indicator position
-  indicator[0].style.left = "10%";
-  indicator[1].style.left = "10%";
+  indicator[0].style.left = "40%";
+  indicator[1].style.left = "40%";
   indicator[0].style.backgroundColor = "red";
   indicator[1].style.backgroundColor = "red";
   winChant.innerText = " ";

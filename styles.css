@@ -764,11 +764,11 @@ button {
   }
 
   .close {
-    margin-top: 5px;
+    margin-top: 10px;
   }
   .manualVisible {
     position: absolute;
-    min-height: 400px;
+    min-height: 470px;
     z-index: 3;
     margin-top: 150px;
     box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);

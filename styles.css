@@ -218,6 +218,7 @@ button {
   background-color: darkred;
   position: relative;
   flex-direction: column;
+  font-size: 0.7rem;
 }
 
 .begin {
@@ -513,6 +514,7 @@ button {
     margin-top: 12px;
     height: 30px;
   }
+  .start{font-size: 0.4rem;}
 }
 
 @media (min-width: 162.1px) and (max-width: 190.9px) {
@@ -937,11 +939,11 @@ button {
   }
 
   .close {
-    margin-top: 5px;
+    margin-top: -1px;
   }
   .manualVisible {
     position: absolute;
-    min-height: 400px;
+    min-height: 430px;
     z-index: 3;
     margin-top: 280px;
     box-shadow: -4px 4px 10px rgba(12, 11, 11, 5);

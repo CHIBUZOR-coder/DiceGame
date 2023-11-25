@@ -17,12 +17,17 @@ var emoji2 = document.querySelector("#emoji2");
 let indicator = document.querySelectorAll(".indicator");
 console.log(indicator);
 let winChant = document.querySelector(".win");
+winChant.style.color = "#4ECCA3";
 console.log(winChant);
 var par1 = document.querySelector("#playColor1");
 var par2 = document.querySelector("#playColor2");
 var ButtonClicked = false;
 let clickCount = 1;
 var countt;
+
+
+
+
 // The bewlow function helps get click count
 
 resetbtn.addEventListener("click", function clickcheck() {
